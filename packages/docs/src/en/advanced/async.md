@@ -5,7 +5,7 @@ title: Async
 
 # Async
 
-Alpine is built to support asynchronous functions in most places it supports standard ones.
+Alpine is built to support asynchronous functions in most places where standard functions are supported.
 
 For example, let's say you have a simple function called `getLabel()` that you use as the input to an `x-text` directive:
 
@@ -33,7 +33,7 @@ async function getLabel() {
 <span x-text="await getLabel()"></span>
 ```
 
-Additionally, if you prefer calling methods in Alpine without the trailing parenthesis, you can leave them out and Alpine will detect that the provided function is async and handle it accordingly. For example:
+Additionally, if you prefer calling methods in Alpine without the trailing parentheses, you can leave them out and Alpine will detect that the provided function is async and handle it accordingly. For example:
 
 ```html
 <span x-text="getLabel"></span>
