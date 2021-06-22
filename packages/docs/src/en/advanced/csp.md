@@ -5,7 +5,7 @@ title: CSP
 
 # CSP (Content-Security Policy)
 
-In order for Alpine to be able to execute plain strings from HTML attributes as JavaScript expressions, for example `x-on:click="console.log()"`, it needs to rely on utilities that violate the "unsafe-eval" content security policy.
+In order for Alpine to be able to execute plain strings from HTML attributes as JavaScript expressions (for example `x-on:click="console.log()"`), it needs to rely on utilities that violate the "unsafe-eval" content security policy.
 
 > Under the hood, Alpine doesn't actually use eval() itself because it's slow and problematic. Instead it uses Function declarations, which are much better, but still violate "unsafe-eval".
 
