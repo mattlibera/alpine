@@ -47,12 +47,12 @@ What you see here is that because `reactiveData` is a thin wrapper around `data`
 
 The main difference here is that any time you modify or retrieve (get or set) a value from `reactiveData`, Alpine is aware of it and can execute any other logic that depends on this data.
 
-`Alpine.reactive` is only the first half of the story. `Alpine.effect` is the other half, let's dig in.
+`Alpine.reactive` is only the first half of the story. `Alpine.effect` is the other half; let's dig in.
 
 <a name="alpine-effect"></a><a name="alpine-effect"></a>
 ## Alpine.effect()
 
-`Alpine.effect` accepts a single callback function. As soon as `Alpine.effect` is called, it will run the provided function, but actively look for any interactions with reactive data. If it detects an interaction (a get or set from the aforementioned reactive proxy) it will keep track of it and make sure to re-run the callback if any of reactive data changes in the future. For example:
+`Alpine.effect` accepts a single callback function. As soon as `Alpine.effect` is called, it will run the provided function, but actively look for any interactions with reactive data. If it detects an interaction (a get or set from the aforementioned reactive proxy) it will keep track of that interaction and make sure to re-run the callback if any of reactive data changes in the future. For example:
 
 ```js
 let data = Alpine.reactive({ count: 1 })
@@ -62,11 +62,11 @@ Alpine.effect(() => {
 })
 ```
 
-When this code is first run, "1" will be logged to the console. Any time `data.count` changes, it's value will be logged to the console again.
+When this code is first run, "1" will be logged to the console. Any time `data.count` changes, its value will be logged to the console again.
 
 This is the mechanism that unlocks all of the reactivity at the core of Alpine.
 
-To connect the dots further, let's look at a simple "counter" component example without using Alpine syntax at all, only using `Alpine.reactive` and `Alpine.effect`:
+To connect the dots further, let's look at a simple "counter" component example with no Alpine syntax at all, instead using only `Alpine.reactive` and `Alpine.effect`:
 
 ```html
 <button>Increment</button>
