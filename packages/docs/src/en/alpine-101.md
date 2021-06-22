@@ -5,7 +5,7 @@ title: Alpine 101
 
 # Alpine 101
 
-Create a blank HTML file somewhere on you computer with a name like: `i-love-alpine.html`
+Create a blank HTML file somewhere on your computer with a name like: `i-love-alpine.html`
 
 Using a text editor, fill the file with these contents:
 
@@ -20,7 +20,7 @@ Using a text editor, fill the file with these contents:
 </html>
 ```
 
-Open your file in a web browser, if you see `I ❤️ Alpine`, you're ready to rumble!
+Open your file in a web browser. If you see `I ❤️ Alpine`, you're ready to rumble!
 
 Now that you're all set up to play around, let's look at three practical examples as a foundation for teaching you the basics of Alpine. By the end of this exercise, you should be more than equipped to start building stuff on your own. Let's goooooo.
 
@@ -103,7 +103,7 @@ When a `click` event happens, Alpine will call the associated JavaScript express
 
 In this case, we're telling Alpine to always make sure that the contents of this `h1` tag reflect the value of the `count` property.
 
-In case it's not clear, `x-text`, like most directives accepts a plain JavaScript expression as an argument. So for example, you could instead set its contents to: `x-text="count * 2"` and the text content of the `h1` will now always be 2 times the value of `count`.
+In case it's not clear, like most directives `x-text` accepts a plain JavaScript expression as an argument. So for example, you could instead set its contents to: `x-text="count * 2"` and the text content of the `h1` will now always be 2 times the value of `count`.
 
 [→ Read more about `x-text`](/directives/text)
 
@@ -225,7 +225,7 @@ Now there's quite a bit happening here, so let's go through this snippet piece b
 <a name="multi-line-formatting"></a>
 ### Multi line formatting
 
-The first thing I'd like to point out is that `x-data` now has a lot more going on in it than before. To make it easier to write and read, we've split it up into multiple lines in our HTML. This is completely optional and we'll talk more in a bit about how to avoid this problem alltogether, but for now, we'll keep all of this JavaScript directly in the HTML.
+The first thing I'd like to point out is that `x-data` now has a lot more going on in it than before. To make it easier to write and read, we've split it up into multiple lines in our HTML. This is completely optional and we'll talk more in a bit about how to avoid this problem altogether, but for now, we'll keep all of this JavaScript directly in the HTML.
 
 <a name="binding-to-inputs"></a>
 ### Binding to inputs
@@ -286,7 +286,7 @@ By passing in this callback to `filter`, we are telling JavaScript to only retur
 
 You may notice that up until now, we haven't had to use `this.` to reference properties. However, because we are working directly inside the `x-data` object, we must reference any properties using `this.[property]` instead of simply `[property]`.
 
-Because Alpine is a "reactive" framework. Any time the value of `this.search` changes, parts of the template that use `filteredItems` will automatically be updated.
+Because Alpine is a "reactive" framework, any time the value of `this.search` changes, parts of the template that use `filteredItems` will automatically be updated.
 
 <a name="looping-elements"></a>
 ### Looping elements
@@ -321,6 +321,6 @@ If you've made it this far, you've been exposed to the following directives in A
 * x-model
 * x-for
 
-That's a great start, however, there are many more directives to sink your teeth into. The best way to absorb Alpine is to read through this documentation. No need to comb over every word, but if you at least glance through every page you will be MUCH more effective when using Alpine.
+That's a great start! However, there are many more directives to sink your teeth into. The best way to absorb Alpine is to read through this documentation. No need to comb over every word, but if you at least glance through every page you will be MUCH more effective when using Alpine.
 
 Happy Coding!
