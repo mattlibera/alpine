@@ -13,7 +13,7 @@ Before we dive into each individual API, let's first talk about where in your co
 
 Because these APIs have an impact on how Alpine initializes the page, they must be registered AFTER Alpine is downloaded and available on the page, but BEFORE it has initialized the page itself.
 
-There are two different techniques depending on if you are importing Alpine into a bundle, or including it directly via a `<script>` tag. Let's look at them both:
+There are two different techniques for doing this, and the one you choose will depend on whether you are importing Alpine into a bundle, or including it directly via a `<script>` tag. Let's look at them both:
 
 <a name="via-script-tag"></a>
 ### Via a script tag
@@ -168,7 +168,7 @@ Let's walk through the above code, line by line.
 let getThingToLog = evaluateLater(expression)
 ```
 
-Here, instead of immediately evaluating `message` and retrieving the result, we will convert the string expression ("message") into an actual JavaScript function that we can run at any time. If you're going to evaluate a JavaScript expression more than once, it is highly recommended to first generate a JavaScript function and use that rather than calling `evaluate()` directly. The reason being that the process to interpret a plain string as a JavaScript function is expensive and should be avoided when unnecessary.
+Here, instead of immediately evaluating `message` and retrieving the result, we will convert the string expression ("message") into an actual JavaScript function that we can run at any time. If you're going to evaluate a JavaScript expression more than once, it is highly recommended to first generate a JavaScript function and use that rather than calling `evaluate()` directly. The reason for this is that the process to interpret a plain string as a JavaScript function is expensive and should be avoided unless absolutely necessary.
 
 ```js
 effect(() => {
@@ -192,7 +192,7 @@ getThingToLog(thingToLog => {
 })
 ```
 
-Now we will call `getThingToLog`, which if you recall is the actual JavaScript function version of the string expression: "message".
+Now we will call `getThingToLog`, which you may recall is the actual JavaScript function version of the string expression: "message".
 
 You might expect `getThingToCall()` to return the result right away, but instead Alpine requires you to pass in a callback to receive the result.
 
@@ -222,7 +222,7 @@ Alpine.directive('...', (el, {}, { cleanup }) => {
 })
 ```
 
-Now if the directive is removed from this element or the element is removed itself, the event listener will be removed as well.
+Now if the directive is removed from this element or the element itself is removed, the event listener will be removed as well.
 
 <a name="custom-magics"></a>
 ## Custom magics
